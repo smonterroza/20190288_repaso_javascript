@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Agrega la siguiente línea para vincular todos.css -->
+    <link rel="stylesheet" href="/css/todos.css">
+</head>
+
+<body>
+    <div>
+        <ul class="nav nav-tabs m-2" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><a
+                        href="/html/index.html">Métodos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><a
+                        href="/html/ejemplos.html">Ejemplos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a
+                        href="/html/arreglos.html">Arreglos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+                    <a href="/html/api.html">API</a>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1 class="text-center">Reduce</h1>
+            <h2 class="text-center">Ejemplo de Reduce</h2>
+            <div class="row">
+                <section class="py-8 bg-white text-center justify-content-center align-items-center mt-3">
+                    <img src="/recursos/img/reduce.png">
+                </section>
+                <section class="py-8 bg-white text-center justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary mt-4" id="buttonreduce"
+                        style="width: 20%;">Respuesta</button>
+
+                    <p class="mt-5" id="product"></p>
+                </section>
+            </div>
+        </div>
+        <div>
+            <h1 class="text-center">Filter</h1>
+            <h2 class="text-center">Ejemplo de Filter</h2>
+            <div class="row">
+                <section class="py-8 bg-white text-center justify-content-center align-items-center mt-3">
+                    <img src="/recursos/img/filter.png">
+                </section>
+                <section class="py-8 bg-white text-center justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary mt-4" id="buttonfilter"
+                        style="width: 20%;">Respuesta</button>
+
+                    <p class="mt-5" id="evenNumbersParagraph"></p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Reduce
+        // Obtiene una referencia al botón
+        const Button = document.getElementById('buttonreduce');
+
+        // Agrega un controlador de eventos al botón
+        Button.addEventListener('click', function () {
+            // Array de números
+            const numbers = [1, 2, 3, 4, 5];
+
+            // Uso de reduce para multiplicar todos los números en el array
+            const product = numbers.reduce(function (total, number) {
+                return total * number;
+            }, 1);
+
+            document.getElementById("product").innerHTML = 'El producto de los números es: ' + product;
+            // Imprime 120
+        });
+
+
+        // Filter
+        // Obtiene una referencia al botón
+        const filterButton = document.getElementById('buttonfilter');
+
+        // Agrega un controlador de eventos al botón
+        filterButton.addEventListener('click', function () {
+            // Array de números
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            // Uso de filter para obtener solo los números pares en el array
+            const evenNumbers = numbers.filter(function (number) {
+                return number % 2 === 0;
+            });
+
+            // Obtiene una referencia al párrafo donde se mostrarán los números pares
+            const evenNumbersParagraph = document.getElementById('evenNumbers');
+
+            // Muestra los números pares en el párrafo
+            document.getElementById("evenNumbersParagraph").innerHTML = 'Los números pares son: '
+                + evenNumbers.join(', ');
+        });
+
+    </script>
+
+</body>
+
+</html>

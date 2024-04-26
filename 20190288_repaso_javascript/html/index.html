@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos</title>
+    <!-- Agrega la siguiente línea para vincular Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/todos.css">
+</head>
+
+<body>
+    <div>
+        <ul class="nav nav-tabs m-2" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><a
+                        href="/html/index.html">Métodos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><a
+                        href="/html/ejemplos.html">Ejemplos</a></button>
+            </li>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a
+                        href="/html/arreglos.html">Arreglos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+                    <a href="/html/api.html">API</a>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1 class="text-center">Reduce</h1>
+            <h2 class="text-center">Ejemplo de Reduce</h2>
+
+            <section>
+                <form>
+                    <p id="resultado"></p>
+                </form>
+            </section>
+        </div>
+        <div>
+            <h1 class="text-center">Filter</h1>
+            <h2 class="text-center">Ejemplo de Filter</h2>
+
+            <section>
+                <form>
+
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Reduce
+        // Define un arreglo de números
+        const numeros = [1, 2, 3, 4, 5];
+
+        // Utiliza el método reduce para sumar los elementos del arreglo
+        const suma = numeros.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+
+        // Obtiene una referencia al elemento donde se mostrará el resultado
+        const resultado = document.getElementById('resultado');
+
+        // Actualiza el contenido del elemento con el resultado
+        resultado.textContent = 'La suma es: ' + suma;
+
+        // Filter
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter(word => word.length > 6);
+        console.log(result);
+    </script>
+</body>
+
+</html>

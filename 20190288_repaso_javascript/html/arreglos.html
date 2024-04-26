@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <!-- Agrega la siguiente línea para vincular Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/todos.css">
+</head>
+
+<body>
+    <div>
+        <ul class="nav nav-tabs m-2" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><a
+                        href="/html/index.html">Métodos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><a
+                        href="/html/ejemplos.html">Ejemplos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a
+                        href="/html/arreglos.html">Arreglos</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+                    <a href="/html/api.html">API</a>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <section class="py-8 bg-white">
+            <div class="col-sm-12">
+                <h1>Ejercicio 2 - Arreglos</h1>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let arreglos = [
+            {
+                name: 'KYRA',
+                avatar: '/recursos/img/kevinx y yo.jpg',
+            },
+            {
+                name: 'Voleybol',
+                avatar: '/recursos/img/voley.jpg',
+            },
+            {
+                name: 'JEXS',
+                avatar: '/recursos/img/jexs.jpg',
+            },
+            {
+                name: 'Jacko',
+                avatar: '/recursos/img/jacko.jpg',
+            },
+            {
+                name: 'Dino',
+                avatar: '/recursos/img/dino.jpg',
+            },
+            {
+                name: 'Lili',
+                avatar: '/recursos/img/lili.jpg',
+            },
+            {
+                name: 'Hablar de la vida ajena',
+                avatar: '/recursos/img/chisme.jpg',
+            },
+            {
+                name: 'Jugar juegos de mesa',
+                avatar: '/recursos/img/jueguitos.jpg',
+            },
+            {
+                name: 'Dalas Review',
+                avatar: '/recursos/img/dalas.jpg',
+            },
+            {
+                name: 'Lluvia',
+                avatar: '/recursos/img/lluvia.jpg',
+            },
+        ];
+
+        // Obtener el contenedor donde se mostrarán los cards
+        let cardContainer = document.querySelector('.row');
+
+        // Mapear cada arreglo a un elemento HTML de card de Bootstrap
+        let arregloCards = arreglos.map(arreglo => `
+    <div class="col-sm-4 mb-4">
+        <div class="card">
+            <img src="${arreglo.avatar}" class="card-img-top" alt="${arreglo.name}">
+            <div class="card-body">
+                <h5 class="card-title text-center mt-2">${arreglo.name}</h5>
+            </div>
+        </div>
+    </div>
+`);
+
+        // Agregar los cards al contenedor
+        cardContainer.innerHTML = arregloCards.join('');
+    </script>
+</body>
+
+</html>
